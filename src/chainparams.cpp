@@ -177,13 +177,19 @@ public:
         assert(genesis.hashMerkleRoot == uint256("0x62179b80cc4da52f1ff4bad5d690836a3a663d14d5581a63822963bf1613041b"));
 
 
-        vSeeds.push_back(CDNSSeedData("explorer.sapphirecore.com", "explorer.sapphirecore.com"));
-        vSeeds.push_back(CDNSSeedData("seed1.sapphirecore.com", "seed1.sapphirecore.com"));
-        vSeeds.push_back(CDNSSeedData("seed2.sapphirecore.com", "seed2.sapphirecore.com"));
-        vSeeds.push_back(CDNSSeedData("seed3.sapphirecore.com", "seed3.sapphirecore.com"));
-        vSeeds.push_back(CDNSSeedData("seed4.sapphirecore.com", "seed4.sapphirecore.com"));
-        vSeeds.push_back(CDNSSeedData("seed5.sapphirecore.com", "seed5.sapphirecore.com"));
+        vSeeds.push_back(CDNSSeedData("explorer.sappcoin.com", "explorer.sappcoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed1.sappcoin.com", "seed1.sappcoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed2.sappcoin.com", "seed2.sappcoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed3.sappcoin.com", "seed3.sappcoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed4.sappcoin.com", "seed4.sappcoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed5.sappcoin.com", "seed5.sappcoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed6.sappcoin.com", "seed6.sappcoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed7.sappcoin.com", "seed7.sappcoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed8.sappcoin.com", "seed8.sappcoin.com"));
+        vSeeds.push_back(CDNSSeedData("seed9.sappcoin.com", "seed9.sappcoin.com"));	
+        vSeeds.push_back(CDNSSeedData("seed10.sappcoin.com", "seed10.sappcoin.com"));		
 
+		
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 63); //address start letter 'S'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 125);
