@@ -57,12 +57,15 @@ static Checkpoints::MapCheckpoints mapCheckpoints =
     boost::assign::map_list_of
     (0, uint256("0x00000eef0583695d6da23a78bab1c39939bbb54cf9bd5f0d4881c8eef364cd26"))
     (6038, uint256("0xc81108274e6f270e7b0593fb2a6434c7f361c87c273a1989331765f73c4233b7"))
-    (122440 , uint256("0xd72ea9245e69fa3d1acd0ba30ba99c31b813ee7f3cb70894b16cb9fb53647daf"))
+	(122440, uint256("0xd72ea9245e69fa3d1acd0ba30ba99c31b813ee7f3cb70894b16cb9fb53647daf"))
+	(247852, uint256("0xed081efe1d76620413a4b31f0457d2a7755bf400cb54054ac777ec41216aae26"))
+	(351247, uint256("0x4d08ce2fb5de95d860d39a0ffdf397fc13285b8cf892fcfe27f5fcc3983b1ae0"))
+	(433942 , uint256("0xad866a67d0a5409518f48200ad49b968c8e36f1771ce3e5af546fce0dff4469f"))
     ;
 static const Checkpoints::CCheckpointData data = {
     &mapCheckpoints,
-    1564100496, // * UNIX timestamp of last checkpoint block
-    416552,    // * total number of transactions between genesis and last checkpoint
+	1582877647, // * UNIX timestamp of last checkpoint block
+	1482659,    // * total number of transactions between genesis and last checkpoint
                 //   (the tx=... number in the SetBestChain debug.log lines)
     2000        // * estimated number of transactions per day after checkpoint
 };
@@ -144,8 +147,8 @@ public:
         nBlockEnforceInvalidUTXO = std::numeric_limits<int>::max(); //Start enforcing the invalid UTXO's
         nInvalidAmountFiltered = 0 * COIN; //Amount of invalid coins filtered through exchanges, that should be considered valid
         nBlockZerocoinV2 = std::numeric_limits<int>::max(); //!> The block that zerocoin v2 becomes active - roughly Tuesday, May 8, 2018 4:00:00 AM GMT
-        nEnforceNewSporkKey = 1553421600; //!> Sporks signed after (GMT): Sunday, Mar 24, 2019 10:00:00 AM GMT must use the new spork key
-        nRejectOldSporkKey = 1553594400; //!> Fully reject old spork key after (GMT): Mar 26, 2019 10:00:00 AM GMT
+        nEnforceNewSporkKey = 1583056800; //!> Sporks signed after (GMT): Friday, 28 February 2020 10:00:00 AM GMT must use the new spork key
+        nRejectOldSporkKey = 1584352800; //!> Fully reject old spork key after (GMT): Monday, 16 March 2020 10:00:00 AM
 
         /**
          * Build the genesis block. Note that the output of the genesis coinbase cannot
@@ -177,19 +180,18 @@ public:
         assert(genesis.hashMerkleRoot == uint256("0x62179b80cc4da52f1ff4bad5d690836a3a663d14d5581a63822963bf1613041b"));
 
 
-        vSeeds.push_back(CDNSSeedData("explorer.sappcoin.com", "explorer.sappcoin.com"));
+        vSeeds.push_back(CDNSSeedData("sappexplorer.com", "sappexplorer.com"));
         vSeeds.push_back(CDNSSeedData("seed1.sappcoin.com", "seed1.sappcoin.com"));
         vSeeds.push_back(CDNSSeedData("seed2.sappcoin.com", "seed2.sappcoin.com"));
         vSeeds.push_back(CDNSSeedData("seed3.sappcoin.com", "seed3.sappcoin.com"));
         vSeeds.push_back(CDNSSeedData("seed4.sappcoin.com", "seed4.sappcoin.com"));
-        vSeeds.push_back(CDNSSeedData("seed5.sappcoin.com", "seed5.sappcoin.com"));
-        vSeeds.push_back(CDNSSeedData("seed6.sappcoin.com", "seed6.sappcoin.com"));
-        vSeeds.push_back(CDNSSeedData("seed7.sappcoin.com", "seed7.sappcoin.com"));
-        vSeeds.push_back(CDNSSeedData("seed8.sappcoin.com", "seed8.sappcoin.com"));
-        vSeeds.push_back(CDNSSeedData("seed9.sappcoin.com", "seed9.sappcoin.com"));	
-        vSeeds.push_back(CDNSSeedData("seed10.sappcoin.com", "seed10.sappcoin.com"));		
+		vSeeds.push_back(CDNSSeedData("seed5.sappcoin.com", "seed5.sappcoin.com"));
+		vSeeds.push_back(CDNSSeedData("seed6.sappcoin.com", "seed6.sappcoin.com"));
+		vSeeds.push_back(CDNSSeedData("seed7.sappcoin.com", "seed7.sappcoin.com"));
+		vSeeds.push_back(CDNSSeedData("seed8.sappcoin.com", "seed8.sappcoin.com"));
+		vSeeds.push_back(CDNSSeedData("seed9.sappcoin.com", "seed9.sappcoin.com"));
+		vSeeds.push_back(CDNSSeedData("seed10.sappcoin.com", "seed10.sappcoin.com"));
 
-		
         base58Prefixes[PUBKEY_ADDRESS] = std::vector<unsigned char>(1, 63); //address start letter 'S'
         base58Prefixes[SCRIPT_ADDRESS] = std::vector<unsigned char>(1, 18);
         base58Prefixes[SECRET_KEY] = std::vector<unsigned char>(1, 125);
@@ -211,7 +213,7 @@ public:
         fZeroCoinEnabled = false;
 
         nPoolMaxTransactions = 3;
-        strSporkKey = "043a07ed06afcd70cf3659bb5e81e7f5921ae13de643ea4ddcda8f75ac269ddda50ed49683956552784269b48bb4b8bd87604c5e7b5507a2b80eb1e78e993753e9";
+        strSporkKey = "044d671f7729893354d02dbab3873053dff5c1ef2fc7daf720edcd647d4af725c5137faafb4b71a9356486988ae2e0366a1aa2564424101f9072f7fd92bbed3261";
         strSporkKeyOld = "043a07ed06afcd70cf3659bb5e81e7f5921ae13de643ea4ddcda8f75ac269ddda50ed49683956552784269b48bb4b8bd87604c5e7b5507a2b80eb1e78e993753e9";
         strObfuscationPoolDummyAddress = "STfEm5UP1dXB2x3os3Siktk6deigCViMqs";
         nStartMasternodePayments = 1550372857; //Sun, 17 Feb 2019 03:07:37 GMT

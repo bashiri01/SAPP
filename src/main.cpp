@@ -5764,6 +5764,7 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
         // available. If not, ask the first peer connected for them.
         bool fMissingSporks = !pSporkDB->SporkExists(SPORK_14_NEW_PROTOCOL_ENFORCEMENT) &&
                 !pSporkDB->SporkExists(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2) &&
+			!pSporkDB->SporkExists(SPORK_17_NEW_PROTOCOL_ENFORCEMENT_3) &&
                 !pSporkDB->SporkExists(SPORK_16_ZEROCOIN_MAINTENANCE_MODE);
 
         if (fMissingSporks || !fRequestedSporksIDB){
@@ -6644,15 +6645,15 @@ bool static ProcessMessage(CNode* pfrom, string strCommand, CDataStream& vRecv, 
 //       it was the one which was commented out
 int ActiveProtocol()
 {
-    // SPORK_14 is used for 70914 (v1.0.0+)
-    //if (IsSporkActive(SPORK_14_NEW_PROTOCOL_ENFORCEMENT))
-    //       return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+	// SPORK_17 is used for 70920 (v1.2.2+)
+	if (IsSporkActive(SPORK_17_NEW_PROTOCOL_ENFORCEMENT_3))
+		return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT_2;
 
     // SPORK_15 was used for 70916 (v1.1.0+), commented out now.
-    if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
-            return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
+    //if (IsSporkActive(SPORK_15_NEW_PROTOCOL_ENFORCEMENT_2))
+    //        return MIN_PEER_PROTO_VERSION_AFTER_ENFORCEMENT;
 
-    return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT;
+    return MIN_PEER_PROTO_VERSION_BEFORE_ENFORCEMENT_2;
 }
 
 // requires LOCK(cs_vRecvMsg)
